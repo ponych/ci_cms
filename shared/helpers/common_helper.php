@@ -9,7 +9,7 @@
 if (!function_exists('setting')) {
     function setting($item) {
         $ci = get_instance();
-        return $ci->setting->get($item);
+        return $ci->settings->item($item);
     }
 }
 

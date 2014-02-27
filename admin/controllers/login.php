@@ -10,8 +10,11 @@ class login extends CI_Controller {
         parent::__construct();
         $this->load->database();
         $this->load->library('session');
-        $this->setting->load('backend');
-        $this->load->switch_theme('backend');
+//        echo get_class($this->settings);
+//        $this->settings->load('backend');
+//        $this->load->switch_theme('backend');
+        fb(setting('backend_theme'),'setting(\'backend_theme\')');
+        $this->load->switch_theme('default');
     }
 
     function index() {

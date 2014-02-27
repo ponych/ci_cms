@@ -5,11 +5,10 @@
  * Time: 3:33 PM
  */
 
-$autoload =  array(
-    'packages'  => array(SHARED_PATH) ,
-    'libraries' => array('platform' ,'settings') ,
-    'helper'    => array('form' ,'url' ,'common', 'utils') ,
-    'language'  => array() ,
-    'config'    => array() ,
-    'model'     => array('user_mdl')
-);
+//$autoload =  array(
+$autoload['packages']  = array(SHARED_PATH) ;
+$autoload['libraries'] = array('platform' ,'settings') ;
+$autoload['helper']    = array('form' ,'url' ,'common', 'utils') ;
+$autoload['language']  = array() ;
+$autoload['config']    = array() ;
+$autoload['model']     = array('user_mdl');

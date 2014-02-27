@@ -190,9 +190,29 @@ else
 }
 
 
-echo dirname(BASEPATH) .  '/shared/config/constant.php'.'<Br />';
-require_once BASEPATH . '../' . 'shared/config/constant.php';
+require_once dirname(BASEPATH ). '/shared/config/constant.php';
 
+if ('development' == ENVIRONMENT) {
+    require_once SHARED_PATH.'/libraries/FirePHP.class.php';
+    function fb($val , $label = 'Default' , $type = 'info') {
+        static $fb = null;
+        if (!$fb) {
+            $fb = new FirePHP();
+        }
+
+        switch ($type) {
+            case 'warn' :
+            case 'warning':
+                $fb->warn($val , $label);
+                break;
+            case 'info':
+            default:
+                $fb->info($val , $label);
+                break;
+        }
+    }
+
+}
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
